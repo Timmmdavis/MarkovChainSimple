@@ -1,0 +1,27 @@
+LicenseExternalLicenses. 
+This file lists files that are from other sources within the software or that are 
+associated in some way. 
+
+------------------------------
+Below is a list of files used in the software from other sources (unmodified): 
+
+File:				Name:				Date:	Link:
+
+https://uk.mathworks.com/matlabcentral/fileexchange/63879-estimate-autocorrelation-function-acf		
+colormap_cpt.m		Thijs Damsma		2009	N/A
+sun69.m				François Beauducel	2010   
+https://uk.mathworks.com/matlabcentral/fileexchange/26274-sun69-penny-shaped-crack-in-elastic-half-space
+PlotAutoC...m 		CalvinP & BarryC 	2017 		
+https://uk.mathworks.com/matlabcentral/fileexchange/63879-estimate-autocorrelation-function-acf	
+smooth2a			Greg Reeves 		2009 
+https://uk.mathworks.com/matlabcentral/fileexchange/23287-smooth2a
+
+------------------------------
+Below is a list of files used in the software from other sources that have been modified 
+in some form. 
+
+File:				Name:				Date:	Link:
+
+hist3.m				Jonathan C. Lansey	2015	https://uk.mathworks.com/matlabcentral/fileexchange/45325-efficient-2d-histogram-no-toolboxes-needed
+
+
