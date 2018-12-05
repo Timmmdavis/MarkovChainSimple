@@ -103,5 +103,7 @@ for i=1:Nvars-1
 end
 
 %Draw cmap with the imported cmap if its around. 
-if isempty(cmap2); colormap('default'); else; colormap(cmap2); end 
+bones=bone;
+colormap(bones(30:end,:));
+%if isempty(cmap2); colormap('default'); else; colormap(cmap2); end 
 

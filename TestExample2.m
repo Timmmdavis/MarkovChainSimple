@@ -32,7 +32,7 @@ Pbnds=[1E5,1E10];
 nu = 0.25;              %Poisson's ratio, Nu or V. Rubber 0.5, Cork 0, Rock 0.1-0.3;
 E=5.12E9;           	%Shear Mod, mu or G. Relates shear stress to shear strain. 
 
-Loops=1000;
+Loops=5000;
 %The function we inspect (external .m file) 
 ObjFuncPointer = @TestExample2ObjFunc;
 %The function we use to evaluate the probability (external .m file) 

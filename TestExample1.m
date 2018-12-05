@@ -27,7 +27,7 @@ zgrd=zgrd./max(zgrd(:));
 XBnd=[min(xgrd(:)),max(xgrd(:))]; 
 YBnd=[min(ygrd(:)),max(ygrd(:))];
 
-Loops=1000;
+Loops=2500;
 %The function we inspect (external .m file) 
 ObjFuncPointer = @TestExample1ObjFunc;
 %The function we use to evaluate the probability (external .m file) 
@@ -36,7 +36,7 @@ CostFuncPointer = @TestExample1CostFunc;
 
 %% Start Algorithm
 draw=1; 
-[ BestFit,Nrth,East ] = MetropolisHastingsAlgorithm( ObjFuncPointer,CostFuncPointer,Loops,1,draw,YBnd,XBnd );
+[ BestFit,Nrth,East ] = MetropolisHastingsAlgorithm( ObjFuncPointer,CostFuncPointer,Loops,[],draw,YBnd,XBnd );
 %2nd chain if wanted:
 %[ BestFit2,Nrth2,East2 ] = MetropolisHastingsAlgorithm( ObjFuncPointer,CostFuncPointer,Loops,2,YBnd,XBnd );
 
@@ -64,8 +64,8 @@ PlotAutoCorrelation( lags,Nrth,East )
 % hold off
 
 %Plot result (densities)
-Bins=20; %70
-Smooth=1;
+Bins=40; %70
+Smooth=2;
 DrawPosteriorRelations( Bins,Smooth,BestFit,Nrth,East )
 axis('equal');%view([90 -90]) %Flip so upright
 
