@@ -212,8 +212,10 @@ for i=Sample:Loops
     %% Extras: 
    
     if AreWeSaving
+        if mod(i,1000)==0 %we save every 1000 loops
         %Save stuff: save to file incrementally. Turn off to speed up!
-        BackUpArrayObject.XDistribution(i,:)=XDistribution(i,:);
+        BackUpArrayObject.XDistribution(i-999:i,:)=XDistribution(i-999:i,:);
+        end
     end
     
     %progress. Very simple, counts up to 1. 
