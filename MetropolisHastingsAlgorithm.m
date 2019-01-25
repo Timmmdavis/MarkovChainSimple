@@ -61,14 +61,14 @@ Nvars=nargin-5;
 
 %Init vars for loop, cols the size of the number of vars and rows the size
 %of our loop. 
-XDistribution=nan(Loops,Nvars);
+XDistribution=nan(Loops,Nvars+1);
 
 %% Set Prior distribution. 
 %Here we use a uniform distribution for each var between its min and max extents: 
 Sample=round(Loops/6);  % size of starting distribution in the array. 
 BurnIn=round(Loops/3);
 %Fill our distribution with this up the the length sample. 
-XDistribution(1:Sample,1:Nvars)=rand(Sample,Nvars);
+XDistribution(1:Sample,1:Nvars+1)=rand(Sample,Nvars+1);
 %Now scale this accordingly so it fits the data extents
 for i=1:Nvars
     XDistribution(1:Sample,i)=(XDistribution(1:Sample,i)*range(varargin{i}))+min(varargin{i});
@@ -184,7 +184,7 @@ for i=Sample:Loops
         Mi=Mstr;
         
         %Accept the candidate by setting xt + 1 = x'
-        XDistribution(i,:)=RandomParams;
+        XDistribution(i,:)=[RandomParams;sum(Pred)]; 
         
         acceptrate = acceptrate + 1;
         
@@ -237,7 +237,7 @@ XDistribution=XDistribution(1:TakeEveryNth:end,:);
 %it like the inputs a col vector list).
 BestSol=BestSol(2:end);
 
-for j=1:Nvars
+for j=1:Nvars+1
     varargout{j} = XDistribution(:,j);
 end
 

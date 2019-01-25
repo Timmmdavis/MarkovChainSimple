@@ -36,7 +36,7 @@ CostFuncPointer = @TestExample1CostFunc;
 
 %% Start Algorithm
 draw=1; 
-[ BestFit,Nrth,East ] = MetropolisHastingsAlgorithm( ObjFuncPointer,CostFuncPointer,Loops,[],draw,YBnd,XBnd );
+[ BestFit,Nrth,East ] = MetropolisHastingsAlgorithm( ObjFuncPointer,CostFuncPointer,Loops,[],draw,YBnd,XBnd ); %Can also have output 'Pred'
 %2nd chain if wanted:
 %[ BestFit2,Nrth2,East2 ] = MetropolisHastingsAlgorithm( ObjFuncPointer,CostFuncPointer,Loops,2,YBnd,XBnd );
 
